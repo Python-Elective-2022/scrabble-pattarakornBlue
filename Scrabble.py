@@ -83,6 +83,7 @@ def get_word_score(word, n):
     # Calculation
     score  = 0
     for letter in word:
+        letter = letter.lower()
         score += SCRABBLE_LETTER_VALUES[letter]
     score *= len(word)
     if len(word) == n:
@@ -91,6 +92,7 @@ def get_word_score(word, n):
 
     # Check Postcondition
     #assert score >= 0,  "Score must be in positive"
+    
 
 
 #
