@@ -1,4 +1,4 @@
-from Scrabble import *
+from Blue_1104_Scrabble import *
 
 #
 # Test code
