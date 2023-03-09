@@ -72,11 +72,11 @@ def get_word_score(word, n):
     returns: int >= 0
     """
     #Check Precondition
-    #assert type(word) == str,             "check {word} for mispelled word"
-    #assert word.islower() == True,        "{word} must be lower case"
-    #assert  len(word) > 0,              "word must not be 0 "
-    #assert type(n) == int,              "check for hand_size (n) if it int or not"
-    #assert n > 0,                    "hand_size must not be 0 in get word score"
+    assert type(word) == str,             "check {word} for mispelled word"
+    assert word.islower() == True,        "{word} must be lower case"
+    assert  len(word) > 0,              "word must not be 0 "
+    assert type(n) == int,              "check for hand_size (n) if it int or not"
+    assert n > 0,                    "hand_size must not be 0 in get word score"
 
     
 
@@ -91,7 +91,7 @@ def get_word_score(word, n):
     return score
 
     # Check Postcondition
-    #assert score >= 0,  "Score must be in positive"
+    assert score >= 0,  "Score must be in positive"
     
 
 
@@ -166,7 +166,24 @@ def update_hand(hand, word):
     hand: dictionary (string -> int)    
     returns: dictionary (string -> int)
     """
-    # TO DO ... <-- Remove this comment when you code this function
+
+    #Pseudocode
+    """
+    make a copy of hand
+    for letter in word
+        decrease letter count by one
+        hand[letter] =- 1
+    
+    options:
+        set letter value to zero or delete the key
+    return hand_copy
+    """
+    copy_hand = hand.copy()
+    for letter in word:
+        copy_hand[letter] =- 1
+        if copy_hand[letter] == 0:
+            del copy_hand[letter]
+    return copy_hand
 
 
 #
@@ -183,7 +200,23 @@ def is_valid_word(word, hand, word_list):
     hand: dictionary (string -> int)
     word_list: list of lowercase strings
     """
-    # TO DO ... <-- Remove this comment when you code this function
+    # pseudo code
+    """
+    make a copy of the hand
+
+    for every letter in the word
+        if letter is not in hand_copy
+            return False
+        otherwise
+            check if there's enough of that letter
+            if hand_copy[letter] > 0
+                subtract 1 from letter count
+            otherwise
+                return false
+
+    if word is in word list
+        return
+    """
 
 
 #
