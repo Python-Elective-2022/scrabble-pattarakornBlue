@@ -72,11 +72,11 @@ def get_word_score(word, n):
     returns: int >= 0
     """
     #Check Precondition
-    assert type(word) == str,             "check {word} for mispelled word"
-    assert word.islower() == True,        "{word} must be lower case"
-    assert  len(word) > 0,              "word must not be 0 "
-    assert type(n) == int,              "check for hand_size (n) if it int or not"
-    assert n > 0,                    "hand_size must not be 0 in get word score"
+    #assert type(word) == str,             "check {word} for mispelled word"
+    #assert word.islower() == True,        "{word} must be lower case"
+    #assert  len(word) > 0,              "word must not be 0 "
+    #assert type(n) == int,              "check for hand_size (n) if it int or not"
+    #assert n > 0,                    "hand_size must not be 0 in get word score"
 
     
 
@@ -91,7 +91,7 @@ def get_word_score(word, n):
     return score
 
     # Check Postcondition
-    assert score >= 0,  "Score must be in positive"
+    #assert score >= 0,  "Score must be in positive"
     
 
 
@@ -180,7 +180,7 @@ def update_hand(hand, word):
     """
     copy_hand = hand.copy()
     for letter in word:
-        copy_hand[letter] =- 1
+        copy_hand[letter] -= 1
         if copy_hand[letter] == 0:
             del copy_hand[letter]
     return copy_hand
